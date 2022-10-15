@@ -1,0 +1,24 @@
+int main()
+{
+	fd_set rset;
+	int maxfd = -1;
+	fd = socket(..);
+
+	bind(fd,...);
+	listen(fd,  );
+	maxfd = fd;
+	FD_ZERO(&rset);
+#if 0 
+	select(maxfd+1,&rset,NULL,NULL,NULL);
+#else 
+	tout.tv_sec = 5;
+	tout.tv_usec = 0;
+	select(maxfd+1,&rset,NULL,NULL,&tout);
+#endif 
+	if(FD_ISSET(fd,&rset))
+	{
+		newfd = accept(fd,....);
+	}
+
+	return 0;
+}
